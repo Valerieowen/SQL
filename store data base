@@ -1,0 +1,33 @@
+--create a store database
+
+CREATE TABLE clothes 
+(id INTEGER PRIMARY KEY,
+name TEXT, 
+brand TEXT, 
+type TEXT,
+price REAL);
+
+INSERT INTO clothes VALUES (1, "cami top", "Free People", "tops", 32.00); 
+INSERT INTO clothes VALUES (2, "nora shorts", "Princess Polly", "bottoms", 40.00);
+INSERT INTO clothes VALUES (3, "gilda purse", "Free People", "purses", 53.00);
+INSERT INTO clothes VALUES (4, "gladiator sandals", "Aloha", "shoes", 120.00);
+INSERT INTO clothes VALUES (5, "rina button down top", "VRG", "tops", 55.00);
+INSERT INTO clothes VALUES (6, "flared jeans", "Princess Polly", "bottoms", 60.00);
+INSERT INTO clothes VALUES (7, "mom shorts", "VRG", "bottoms", 40.00);
+INSERT INTO clothes VALUES (8, "cow girl boots", "Free People", "shoes", 55.00); 
+INSERT INTO clothes VALUES (9, "rita mini skirt", "Oh Polly", "bottoms", 34.00); 
+INSERT INTO clothes VALUES (10, "leather cross bag", "Aloha", "purses", 67.00);
+INSERT INTO clothes VALUES (11, "tati dress", "House of Curb", "dresses", 80.00);
+INSERT INTO clothes VALUES (12, "raya mini dress", "House of Curb", "dresses", 66.00);
+INSERT INTO clothes VALUES (13, "white tank top", "VRG", "tops", 24.00);
+INSERT INTO clothes VALUES (14, "mermaid long skirt", "Princess Polly", "bottoms", 40.00);
+INSERT INTO clothes VALUES (15, "desi crop top", "Oh Polly", "tops", 32.00);
+
+--display database ordered by price
+SELECT * FROM clothes ORDER BY price;
+
+--what is the maximum price from clothes?
+SELECT MAX(price) FROM clothes;
+
+--what are the prices higher than 32?
+SELECT * FROM clothes WHERE price > 32;
