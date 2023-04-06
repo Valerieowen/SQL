@@ -1,0 +1,37 @@
+--create a table for famous peoples basic information 
+CREATE TABLE famouspeople (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER,
+    zodiac TEXT);
+    
+INSERT INTO famouspeople (fullname, age, zodiac) VALUES ("Alix Earl", 22, "sagittarius");
+INSERT INTO famouspeople (fullname, age, zodiac) VALUES ("Jenna Ortega", 20, "libra");
+INSERT INTO famouspeople (fullname, age, zodiac) VALUES ("Selena Gomez", 30, "cancer");
+INSERT INTO famouspeople(fullname, age, zodiac) VALUES ("Monet McMichael", 23, "aquarius");
+INSERT INTO famouspeople (fullname, age, zodiac) VALUES ("Sarah Maas", 37, "pisces");
+INSERT INTO famouspeople(fullname, age, zodiac) VALUES ("Taylor Swift", 33, "sagittarius");
+INSERT INTO famouspeople(fullname, age, zodiac) VALUES ("Ana Taylor", 26, "aries"); 
+INSERT INTO famouspeople(fullname, age, zodiac) VALUES ("Gal Gadot", 37, "taurus");
+
+--create a table for famous peoples career information
+CREATE table careers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    type TEXT,
+    net_worth INTEGER,
+    name_id INTEGER,
+    years_working INTEGER);
+   
+INSERT INTO careers (type, net_worth, name_id, years_working) VALUES ("tik toker", 1200000, 1, 3); 
+INSERT INTO careers (type, net_worth, name_id, years_working) VALUES ("actress", 3000000, 2, 12);
+INSERT INTO careers (type, net_worth, name_id, years_working) VALUES ("singer", 95000000, 3, 20); 
+INSERT INTO careers (type, net_worth, name_id, years_working) VALUES ("tik toker", 1000000, 4, 3); 
+INSERT INTO careers (type, net_worth, name_id, years_working) VALUES ("writer", 40000000, 5, 21); 
+INSERT INTO careers (type, net_worth, name_id, years_working) VALUES ("singer", 450000000, 6, 23); 
+INSERT INTO careers (type, net_worth, name_id, years_working) VALUES ("actress", 7000000, 7, 10);
+    
+ --join famouspeoples fullnames and career types  
+   SELECT famouspeople.fullname, careers.type
+    FROM famouspeople 
+    JOIN careers
+    ON famouspeople.id = careers.name_id;
