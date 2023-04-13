@@ -1,0 +1,46 @@
+#Show Customers (their full names, customer ID, and country) who are not in the US
+SELECT FirstName, LastName, Customerid, Country
+FROM chinook.customers
+WHERE Country <> 'USA';
+
+
+#Show Customers who are from Germany
+SELECT FirstName, LastName, Customerid, Country
+FROM chinook.customers
+WHERE Country = 'Germany';
+
+
+#Find the Invoices of customers who are from Germany 
+SELECT customers.FirstName
+,customers.LastName
+,customers.Country
+,customers.CustomerId
+,invoices.BillingAddress
+,invoices.InvoiceDate
+FROM chinook.customers
+JOIN chinook.invoices
+ON customers.CustomerId = invoices.InvoiceId
+WHERE Country = 'Germany'
+
+
+#Show the Employees who are Sales Support Agents.
+SELECT FirstName, LastName, Title
+FROM chinook.employees
+WHERE Title = 'Sales Support Agent';
+
+
+# Provide a query that shows the invoices and dates associated with each employee.  
+SELECT employees.FirstName
+,employees.LastName
+,employees.Title
+,invoices.InvoiceId
+,invoices.InvoiceDate
+FROM chinook.employees
+JOIN chinook.invoices
+ON employees.EmployeeId = invoices.InvoiceId;
+
+
+#Provide invoice id and dates for all invoices in 2009
+SELECT InvoiceId, InvoiceDate
+FROM chinook.invoices
+WHERE InvoiceDate like '%2009%'
