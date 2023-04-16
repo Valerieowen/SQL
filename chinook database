@@ -44,3 +44,14 @@ ON employees.EmployeeId = invoices.InvoiceId;
 SELECT InvoiceId, InvoiceDate
 FROM chinook.invoices
 WHERE InvoiceDate like '%2009%'
+
+
+
+#Write a query that includes the purchased track name AND artist name with each invoice line ID
+SELECT albums.Title, invoice_items.InvoiceLineId, artists.Name
+FROM chinook.albums
+JOIN chinook.invoice_items
+ON albums.AlbumId = invoice_items.InvoiceLineId
+JOIN chinook.artists
+ON albums.AlbumId = artists.ArtistId
+
